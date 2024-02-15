@@ -159,12 +159,7 @@ func is_use_proxy(phost string, premote string) bool {
 	var use_proxy = !check_direct("https://" + phost)
 
 	hosts_list_mutex.Lock()
-	if in_phost {
-		hosts_list[phost] = use_proxy
-	}
-	if in_mainhost {
-		hosts_list[mainhost] = use_proxy
-	}
+	hosts_list[phost1] = use_proxy
 	hosts_list_mutex.Unlock()
 
 	if use_proxy {
